@@ -1,0 +1,8 @@
+<h3>Add a movie to your <%= @list.name %> list</h3>
+
+
+<%= simple_form_for [@list, @bookmark] do |film| %>
+          <%= film.input :comment, placeholder: 'Enter a comment about the movie' %>
+          <%= film.association :movie, prompt: "Select a movie", input_html: {data: { controller: "tom-select"}} %>
+          <%= film.submit class: "btn btn-success" %>
+        <% end %>
