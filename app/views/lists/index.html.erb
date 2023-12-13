@@ -4,3 +4,17 @@
 <h3>My Lists of Movies🎦 </h3>
 
 <%= link_to "Create Movie List", new_list_path, class: "btn btn-primary" %>
+
+<div class="row">
+<% @lists.each do |list|%>
+<div class="#">
+    <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('list_background.jpg') %>)">
+<% link_to list_path(list), class: "text-decoration" do %>
+
+<%= @list.name %>
+<% end %>
+
+</div>
+  <% end %>
+
+</div>
